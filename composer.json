@@ -6,7 +6,7 @@
         "php": ">=7.0.0",
         "illuminate/contracts": "^5.5|^6.0",
         "illuminate/support": "^5.5|^6.0",
-        "kitetail/zttp": "^0.3.0",
+        "kitetail/zttp": "^0.6.0",
         "jmikola/geojson": "^1.0"
     },
     "license": "MIT",
