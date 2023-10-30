@@ -1,4 +1,4 @@
-# Mapbox API for Laravel 5+
+# Mapbox API for Laravel 10+
 
 [![Build Status](https://travis-ci.org/pushlogicltd/mapbox-api-laravel.svg)](https://travis-ci.org/pushlogicltd/mapbox-api-laravel)
 [![Latest Stable Version](https://poser.pugx.org/pushlogicltd/mapbox-api-laravel/v/stable)](https://packagist.org/packages/pushlogicltd/mapbox-api-laravel)
@@ -6,7 +6,7 @@
 [![Monthly Downloads](https://poser.pugx.org/pushlogicltd/mapbox-api-laravel/d/monthly)](https://packagist.org/packages/pushlogicltd/mapbox-api-laravel)
 [![License](https://poser.pugx.org/pushlogicltd/mapbox-api-laravel/license)](https://packagist.org/packages/pushlogicltd/mapbox-api-laravel)
 
-A [Laravel](https://laravel.com/) 5+ Package for managing [Mapbox](https://www.mapbox.com/api-documentation/) Datasets and Tilesets
+A [Laravel](https://laravel.com/) 10+ Package for managing [Mapbox](https://www.mapbox.com/api-documentation/) Datasets and Tilesets
 
 This library supports the listing, creation, and deletion of the following types via the Mapbox API:
 
@@ -21,15 +21,10 @@ This library supports the listing, creation, and deletion of the following types
 composer require pushlogicltd/mapbox-api-laravel
 ```
 
-**Laravel 5.5+**
+**Laravel 10+**
 
 The service provider should be automatically registered.
 
-**Laravel ≤ 5.4:**
-```
-// Laravel: config/app.php
-PushLogic\MapBoxAPILaravel\MapBoxAPILaravelServiceProvider::class
-```
 
 ```
 // Facade Alias

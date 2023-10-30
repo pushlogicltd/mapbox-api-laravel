@@ -12,6 +12,10 @@
     "license": "MIT",
     "authors": [
         {
+            "name": "Matt Fox",
+            "email": "matt.fox@thebluevertex.com"
+        },
+        {
             "name": "Push Logic Ltd",
             "email": "support@pushlogic.co.uk"
         }
