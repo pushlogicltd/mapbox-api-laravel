@@ -1,6 +1,6 @@
 <?php
 
-namespace BlueVertex\MapBoxAPILaravel\Models;
+namespace PushLogic\MapBoxAPILaravel\Models;
 
 use JsonSerializable;
 

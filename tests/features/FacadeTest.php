@@ -1,10 +1,10 @@
 <?php
 
-namespace BlueVertex\MapBoxAPILaravel\Tests;
+namespace PushLogic\MapBoxAPILaravel\Tests;
 
-use BlueVertex\MapBoxAPILaravel\Tests\TestCase;
+use PushLogic\MapBoxAPILaravel\Tests\TestCase;
 use Mapbox as MapboxFacade;
-use BlueVertex\MapBoxAPILaravel\Mapbox;
+use PushLogic\MapBoxAPILaravel\Mapbox;
 
 /**
 * Test submitting a dataset

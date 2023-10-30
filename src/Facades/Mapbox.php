@@ -1,6 +1,6 @@
 <?php
 
-namespace BlueVertex\MapBoxAPILaravel\Facades;
+namespace PushLogic\MapBoxAPILaravel\Facades;
 
 use Illuminate\Support\Facades\Facade;
 
@@ -11,6 +11,6 @@ class Mapbox extends Facade {
      *
      * @return string
      */
-    protected static function getFacadeAccessor() { return 'BlueVertex\MapBoxAPILaravel\Mapbox'; }
+    protected static function getFacadeAccessor() { return 'PushLogic\MapBoxAPILaravel\Mapbox'; }
 
 }

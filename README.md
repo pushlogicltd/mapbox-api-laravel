@@ -1,10 +1,10 @@
 # Mapbox API for Laravel 5+
 
-[![Build Status](https://travis-ci.org/BlueVertex/mapbox-api-laravel.svg)](https://travis-ci.org/BlueVertex/mapbox-api-laravel)
-[![Latest Stable Version](https://poser.pugx.org/bluevertex/mapbox-api-laravel/v/stable)](https://packagist.org/packages/bluevertex/mapbox-api-laravel)
-[![Latest Unstable Version](https://poser.pugx.org/bluevertex/mapbox-api-laravel/v/unstable)](https://packagist.org/packages/bluevertex/mapbox-api-laravel)
-[![Monthly Downloads](https://poser.pugx.org/bluevertex/mapbox-api-laravel/d/monthly)](https://packagist.org/packages/bluevertex/mapbox-api-laravel)
-[![License](https://poser.pugx.org/bluevertex/mapbox-api-laravel/license)](https://packagist.org/packages/bluevertex/mapbox-api-laravel)
+[![Build Status](https://travis-ci.org/PushLogic/mapbox-api-laravel.svg)](https://travis-ci.org/PushLogic/mapbox-api-laravel)
+[![Latest Stable Version](https://poser.pugx.org/PushLogic/mapbox-api-laravel/v/stable)](https://packagist.org/packages/PushLogic/mapbox-api-laravel)
+[![Latest Unstable Version](https://poser.pugx.org/PushLogic/mapbox-api-laravel/v/unstable)](https://packagist.org/packages/PushLogic/mapbox-api-laravel)
+[![Monthly Downloads](https://poser.pugx.org/PushLogic/mapbox-api-laravel/d/monthly)](https://packagist.org/packages/PushLogic/mapbox-api-laravel)
+[![License](https://poser.pugx.org/PushLogic/mapbox-api-laravel/license)](https://packagist.org/packages/PushLogic/mapbox-api-laravel)
 
 A [Laravel](https://laravel.com/) 5+ Package for managing [Mapbox](https://www.mapbox.com/api-documentation/) Datasets and Tilesets
 
@@ -18,7 +18,7 @@ This library supports the listing, creation, and deletion of the following types
 
 **Install Via Composer:**
 ```
-composer require bluevertex/mapbox-api-laravel
+composer require PushLogic/mapbox-api-laravel
 ```
 
 **Laravel 5.5+**
@@ -28,21 +28,21 @@ The service provider should be automatically registered.
 **Laravel ≤ 5.4:**
 ```
 // Laravel: config/app.php
-BlueVertex\MapBoxAPILaravel\MapBoxAPILaravelServiceProvider::class
+PushLogic\MapBoxAPILaravel\MapBoxAPILaravelServiceProvider::class
 ```
 
 ```
 // Facade Alias
-'Mapbox' => BlueVertex\MapBoxAPILaravel\Facades\Mapbox::class,
+'Mapbox' => PushLogic\MapBoxAPILaravel\Facades\Mapbox::class,
 ```
 
 **Lumen:**
 ```
 // bootstrap/app.php:
-$app->register(BlueVertex\MapBoxAPILaravel\MapBoxAPILaravelServiceProvider::class);
+$app->register(PushLogic\MapBoxAPILaravel\MapBoxAPILaravelServiceProvider::class);
 
 $app->withFacades(true, [
-    'BlueVertex\MapBoxAPILaravel\Facades\Mapbox' => 'Mapbox'
+    'PushLogic\MapBoxAPILaravel\Facades\Mapbox' => 'Mapbox'
 ]);
 ```
 

@@ -1,11 +1,10 @@
 <?php
 
-namespace BlueVertex\MapBoxAPILaravel;
+namespace PushLogic\MapBoxAPILaravel;
 
-use Zttp\Zttp;
-use Zttp\ZttpResponse;
-use \BlueVertex\MapBoxAPILaravel\Mapbox;
-use \BlueVertex\MapBoxAPILaravel\Facades\Mapbox as MapboxFacade;
+use GuzzleHttp\Client as Guzzle;
+use \PushLogic\MapBoxAPILaravel\Mapbox;
+use \PushLogic\MapBoxAPILaravel\Facades\Mapbox as MapboxFacade;
 use GeoJson\Feature\Feature;
 
 /**
@@ -17,11 +16,13 @@ class MapboxFeatures
 
     private $datasetID;
     private $featureID;
+    private $guzzle;
 
     public function __construct($datasetID, $featureID = null)
     {
         $this->datasetID = $datasetID;
         $this->featureID = $featureID;
+        $this->guzzle = new Guzzle();
     }
 
     private function request($options = [])
@@ -31,11 +32,11 @@ class MapboxFeatures
 
     public function list()
     {
-        $response = Zttp::get($this->request([
+        $response = $this->guzzle->get($this->request([
             MapboxFeatures::TYPE
         ]));
 
-        return $response->json();
+        return json_decode($response->getBody(), true);
     }
 
     public function add(Feature $feature)
@@ -45,12 +46,12 @@ class MapboxFeatures
             throw new RunTimeException('Feature ID Required');
         }
 
-        $response = Zttp::put($this->request([
+        $response = $this->guzzle->put($this->request([
             MapboxFeatures::TYPE,
             $this->featureID
-        ]), $feature);
+        ]), ['json' => $feature]);
 
-        return $response->json();
+        return json_decode($response->getBody(), true);
     }
 
     public function get()
@@ -60,12 +61,12 @@ class MapboxFeatures
             throw new RunTimeException('Feature ID Required');
         }
 
-        $response = Zttp::get($this->request([
+        $response = $this->guzzle->get($this->request([
             MapboxFeatures::TYPE,
             $this->featureID
         ]));
 
-        return $response->json();
+        return json_decode($response->getBody(), true);
     }
 
     public function delete()
@@ -75,11 +76,11 @@ class MapboxFeatures
             throw new RunTimeException('Feature ID Required');
         }
 
-        $response = Zttp::delete($this->request([
+        $response = $this->guzzle->delete($this->request([
             MapboxFeatures::TYPE,
             $this->featureID
         ]));
 
-        return $response;
+        return $response->getStatusCode() === 204; // Assuming you want a boolean true/false for successful delete.
     }
 }

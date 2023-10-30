@@ -1,9 +1,9 @@
 <?php
 
-namespace BlueVertex\MapBoxAPILaravel\Tests;
+namespace PushLogic\MapBoxAPILaravel\Tests;
 
-use BlueVertex\MapBoxAPILaravel\Tests\TestCase;
-use BlueVertex\MapBoxAPILaravel\Models\Dataset;
+use PushLogic\MapBoxAPILaravel\Tests\TestCase;
+use PushLogic\MapBoxAPILaravel\Models\Dataset;
 use Mapbox;
 
 /**

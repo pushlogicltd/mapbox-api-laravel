@@ -1,13 +1,12 @@
 <?php
 
-namespace BlueVertex\MapBoxAPILaravel;
+namespace PushLogic\MapBoxAPILaravel;
 
 use RunTimeException;
 use Illuminate\Config\Repository as Config;
-use Zttp\Zttp;
-use Zttp\ZttpResponse;
-use \BlueVertex\MapBoxAPILaravel\MapboxFeatures;
-use \BlueVertex\MapBoxAPILaravel\Models\S3Credentials;
+use GuzzleHttp\Client as Guzzle;
+use \PushLogic\MapBoxAPILaravel\MapboxFeatures;
+use \PushLogic\MapBoxAPILaravel\Models\S3Credentials;
 
 class Mapbox
 {
@@ -31,6 +30,12 @@ class Mapbox
     private $currentType;
 
     private $id;
+    
+    /**
+     * Guzzle
+     * @var object
+     */
+    private $guzzle;
 
     public function __construct(Config $config)
     {
@@ -46,6 +51,8 @@ class Mapbox
         {
             throw new RunTimeException('No config found');
         }
+
+        $this->guzzle = new Guzzle();
     }
 
     public function test()
@@ -121,16 +128,16 @@ class Mapbox
             throw new RunTimeException('Dataset listing does not support parameters');
         }
 
-        $response = Zttp::get($this->getUrl($this->currentType), $options);
+        $response = $this->guzzle->get($this->getUrl($this->currentType), ['query' => $options]);
 
-        return $response->json();
+        return json_decode($response->getBody(), true);
     }
 
     public function create($data)
     {
-        $response = Zttp::post($this->getUrl($this->currentType), $data);
+        $response = $this->guzzle->post($this->getUrl($this->currentType), ['json' => $data]);
 
-        return $response->json();
+        return json_decode($response->getBody(), true);
     }
 
     public function get()
@@ -140,9 +147,9 @@ class Mapbox
             throw new RunTimeException('Dataset ID Required');
         }
 
-        $response = Zttp::get($this->getUrl($this->currentType, $this->id));
+        $response = $this->guzzle->get($this->getUrl($this->currentType, $this->id));
 
-        return $response->json();
+        return json_decode($response->getBody(), true);
     }
 
     public function update($data)
@@ -152,9 +159,9 @@ class Mapbox
             throw new RunTimeException('Dataset ID Required');
         }
 
-        $response = Zttp::patch($this->getUrl($this->currentType, $this->id), $data);
+        $response = $this->guzzle->patch($this->getUrl($this->currentType, $this->id), ['json' => $data]);
 
-        return $response->json();
+        return json_decode($response->getBody(), true);
     }
 
     public function delete()
@@ -163,8 +170,9 @@ class Mapbox
         {
             throw new RunTimeException('Dataset ID Required');
         }
+        $response = $this->guzzle->delete($this->getUrl($this->currentType, $this->id));
 
-        return Zttp::delete($this->getUrl($this->currentType, $this->id));
+        return $response->getStatusCode() === 204; // Assuming you want a boolean true/false for successful delete.
     }
 
     public function features($featureID = null)
@@ -192,8 +200,8 @@ class Mapbox
             throw new RunTimeException('Credentials only work with Uploads');
         }
 
-        $response = Zttp::get($this->getUrl($this->currentType, null, ['credentials']));
+        $response = $this->guzzle->get($this->getUrl($this->currentType, null, ['credentials']));
 
-        return new S3Credentials($response->json());
+        return new S3Credentials(json_decode($response->getBody(), true));
     }
 }
