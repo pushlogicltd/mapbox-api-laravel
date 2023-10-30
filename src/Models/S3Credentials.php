@@ -1,6 +1,6 @@
 <?php
 
-namespace PushLogic\MapBoxAPILaravel\Models;
+namespace PushLogicLtd\MapBoxAPILaravel\Models;
 
 class S3Credentials extends JSONModel
 {

@@ -1,6 +1,6 @@
 <?php
 
-namespace PushLogic\MapBoxAPILaravel\Tests;
+namespace PushLogicLtd\MapBoxAPILaravel\Tests;
 
 use Orchestra\Testbench\TestCase as OrchestraTestCase;
 
@@ -14,13 +14,13 @@ class TestCase extends OrchestraTestCase
 
     protected function getPackageProviders($app)
     {
-        return ['PushLogic\MapBoxAPILaravel\MapBoxAPILaravelServiceProvider'];
+        return ['PushLogicLtd\MapBoxAPILaravel\MapBoxAPILaravelServiceProvider'];
     }
 
     protected function getPackageAliases($app)
     {
         return [
-            'Mapbox' => 'PushLogic\MapBoxAPILaravel\Facades\Mapbox'
+            'Mapbox' => 'PushLogicLtd\MapBoxAPILaravel\Facades\Mapbox'
         ];
     }
 

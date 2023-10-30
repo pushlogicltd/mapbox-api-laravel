@@ -1,9 +1,9 @@
 <?php
 
-namespace PushLogic\MapBoxAPILaravel\Tests;
+namespace PushLogicLtd\MapBoxAPILaravel\Tests;
 
-use PushLogic\MapBoxAPILaravel\Tests\TestCase;
-use PushLogic\MapBoxAPILaravel\Models\S3Credentials;
+use PushLogicLtd\MapBoxAPILaravel\Tests\TestCase;
+use PushLogicLtd\MapBoxAPILaravel\Models\S3Credentials;
 use Mapbox;
 
 /**

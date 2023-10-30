@@ -28,16 +28,16 @@ The service provider should be automatically registered.
 
 ```
 // Facade Alias
-'Mapbox' => PushLogic\MapBoxAPILaravel\Facades\Mapbox::class,
+'Mapbox' => PushLogicLtd\MapBoxAPILaravel\Facades\Mapbox::class,
 ```
 
 **Lumen:**
 ```
 // bootstrap/app.php:
-$app->register(PushLogic\MapBoxAPILaravel\MapBoxAPILaravelServiceProvider::class);
+$app->register(PushLogicLtd\MapBoxAPILaravel\MapBoxAPILaravelServiceProvider::class);
 
 $app->withFacades(true, [
-    'PushLogic\MapBoxAPILaravel\Facades\Mapbox' => 'Mapbox'
+    'PushLogicLtd\MapBoxAPILaravel\Facades\Mapbox' => 'Mapbox'
 ]);
 ```
 

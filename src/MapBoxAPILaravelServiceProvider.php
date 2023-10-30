@@ -1,9 +1,9 @@
 <?php
 
-namespace PushLogic\MapBoxAPILaravel;
+namespace PushLogicLtd\MapBoxAPILaravel;
 
 use Illuminate\Support\ServiceProvider;
-use PushLogic\MapBoxAPILaravel\Mapbox;
+use PushLogicLtd\MapBoxAPILaravel\Mapbox;
 
 class MapBoxAPILaravelServiceProvider extends ServiceProvider {
 

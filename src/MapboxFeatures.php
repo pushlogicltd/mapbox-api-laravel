@@ -1,10 +1,10 @@
 <?php
 
-namespace PushLogic\MapBoxAPILaravel;
+namespace PushLogicLtd\MapBoxAPILaravel;
 
 use GuzzleHttp\Client as Guzzle;
-use \PushLogic\MapBoxAPILaravel\Mapbox;
-use \PushLogic\MapBoxAPILaravel\Facades\Mapbox as MapboxFacade;
+use \PushLogicLtd\MapBoxAPILaravel\Mapbox;
+use \PushLogicLtd\MapBoxAPILaravel\Facades\Mapbox as MapboxFacade;
 use GeoJson\Feature\Feature;
 
 /**

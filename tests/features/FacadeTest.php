@@ -1,10 +1,10 @@
 <?php
 
-namespace PushLogic\MapBoxAPILaravel\Tests;
+namespace PushLogicLtd\MapBoxAPILaravel\Tests;
 
-use PushLogic\MapBoxAPILaravel\Tests\TestCase;
+use PushLogicLtd\MapBoxAPILaravel\Tests\TestCase;
 use Mapbox as MapboxFacade;
-use PushLogic\MapBoxAPILaravel\Mapbox;
+use PushLogicLtd\MapBoxAPILaravel\Mapbox;
 
 /**
 * Test submitting a dataset

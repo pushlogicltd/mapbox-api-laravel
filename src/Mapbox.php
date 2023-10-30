@@ -1,12 +1,12 @@
 <?php
 
-namespace PushLogic\MapBoxAPILaravel;
+namespace PushLogicLtd\MapBoxAPILaravel;
 
 use RunTimeException;
 use Illuminate\Config\Repository as Config;
 use GuzzleHttp\Client as Guzzle;
-use \PushLogic\MapBoxAPILaravel\MapboxFeatures;
-use \PushLogic\MapBoxAPILaravel\Models\S3Credentials;
+use \PushLogicLtd\MapBoxAPILaravel\MapboxFeatures;
+use \PushLogicLtd\MapBoxAPILaravel\Models\S3Credentials;
 
 class Mapbox
 {
