@@ -1,6 +1,6 @@
 {
     "name": "pushlogicltd/mapbox-api-laravel",
-    "description": "A Laravel 10+ Package for managing Mapbox Datasets and Tilesets",
+    "description": "A Laravel 11+ Package for managing Mapbox Datasets and Tilesets",
     "type": "library",
     "require": {
         "php": ">=8.2.0",
